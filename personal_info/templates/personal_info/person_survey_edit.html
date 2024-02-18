@@ -1,0 +1,9 @@
+{% extends "personal_info/person_template.html" %}
+
+{% block personal_style%}
+	{% include 'surveys/survey_body.css' %}
+{% endblock %}
+
+{% block person_modules %}
+	{% include "surveys/survey_body.html"%}
+{% endblock %}

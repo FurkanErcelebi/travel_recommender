@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Giriş</a><!--BlogPost</a>-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tablolar<span class="sr-only">(current)</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/person/list">Üyeler</a>
+          <a class="dropdown-item" href="/panel">Ürün ve Servisler</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Düzenle<span class="sr-only">(current)</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/person/create/">Üye ekle</a>
+          <a class="dropdown-item" href="/panel/product">Ürün ekle</a>
+          <a class="dropdown-item" href="/panel/service">Servis ekle</a>
+        </div>
+      </li>
+    </ulS>
+    <form class="form-inline my-1 my-lg-0" action="/person/search/">
+      <input class="form-control mr-sm-2" type="search" name="qp" placeholder="Kişiler" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
+    </form>
+    <form class="form-inline" action=".">
+      <input class="form-control " type="number" name="sp" placeholder="Sabit servis fiyatı" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Ekle</button>
+    </form>
+  </div>
+</nav>

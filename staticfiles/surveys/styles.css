@@ -1,0 +1,18 @@
+.surveyBlock{  
+    padding: 3%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 75%;
+  }
+  
+  .personalSurveyHead{
+      color: green;
+  
+  }
+  
+  .errorMsg{
+    color: red;
+    width: 75%;
+  }

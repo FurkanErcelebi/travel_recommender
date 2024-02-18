@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include 'head-info.html' %}
+
+
+    {% block header%}
+    {% endblock %}
+
+    <style>
+
+      .upper-app-intro{
+        font-weight: 600;
+        animation: app-intro-animation 5s infinite;
+      }
+
+      @keyframes app-intro-animation {
+        0% {background-color: #44C5E2;}
+        20% {background-color: #44E2BC;}
+        40% {background-color: #44BCE2;}
+        60% {background-color: #44B2E2;}
+        80% {background-color: #44D1E2;}
+        100% {background-color: #44E29D;}
+      }
+
+      {% block styles%}
+      {% endblock %}
+    </style>
+
+  </head>
+  <body class="bg-light">
+    
+    <div class="py-3 text-black text-center upper-app-intro">
+      <h2 class="lead"> 
+       <a href="{%url 'person:personDashboard' %}">Travel Recommender App</a>
+      </h2>
+    </div>
+    <div class="toast-container p-3 top-0 end-0" >
+      <div class="toast" id="sideNotification">
+        <div class="toast-header">
+          <!-- <img src="..." class="rounded me-2" alt="..."> -->
+          <strong class="me-auto">Alert</strong>
+          <!-- <small>11 mins ago</small> -->
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="sideNotificationBody">
+          Operation is successfull
+        </div>
+      </div>
+    </div>
+    
+    {% block upper %}
+    {% endblock %}
+  	<div class="container-fluid">
+          
+          {% block intermediate %}
+          {% endblock %}
+          
+          {% block lower %}
+          {% endblock %}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% include 'js.html' %}
+    <script type="text/javascript" >
+      {% block codes %}
+      {% endblock %}
+    </script>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+    </footer>
+  </body>
+</html>

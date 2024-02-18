@@ -1,0 +1,90 @@
+{% extends "host_info/host_template.html" %}
+
+{% block host_modules %}
+<div class="d-inline hostInfoDetailBlock justify-content-center border border-3 position-absolute shadow">
+    <div class="m-5 pb-5 card">
+        <div class="hostTitle card-head">
+            <h3 class="mt-3 text-center">
+                {{ host_name }}
+            </h3>
+        </div>
+        <div class="hostDetailedInfos m-6 card-body">
+            <ul class="list-group">
+                <!-- <a href="#" class="list-group-item list-group-item-action active">
+                Cras justo odio
+                </a> -->
+                {% for host_info in the_host_details%}
+                    <li class="list-group-item disabled">
+                            <div class="hostKey">
+                                <p class="m-6 shadow-sm">
+                                    {{host_info.key}} :
+                                    {{host_info.value}}
+                                </p>
+                            </div>
+                            <!-- <div class="hostValue">
+                                <p>
+                                    {% if host_info.key == 'amenities' %}
+                                        {% for amenity in host_info.value%}
+                                            {{amenity}} , 
+                                        {% endfor %}
+                                    {% else %}
+                                        {{host_info.value}}
+                                    {% endif %}
+                                </p>
+                            </div> -->
+                    </li>
+                {% endfor %}
+                <!-- <div class="m-5 pb-5 card">
+                    <div class="card-head">
+                    <h2 class="mt-3 text-center">Kişisel Bilgiler</h2>
+                </div>
+                    <div class="m-6 card-body">
+                            <p class="m-6 shadow-sm">{{info.lname}}</p>
+                            <p class="m-6 shadow-sm">{{info.fname}}</p>
+                            <p class="m-6 shadow-sm">{{info.telno}}</p>
+                            <p class="m-6 shadow-sm">{{info.email}}</p>
+                            <p class="m-6 shadow-sm">{{info.addr}}</p>
+                    </div>
+                    <div class="card-footer">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Silme">
+                            Sil
+                        </button>
+                        <button type="button" class="btn btn-success" >
+                            <a class="text-white" href="{{info.UpdatePersonInfo}}">Değiştir</a>
+                        </button>
+            
+                        <div class="modal" id="Silme">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+            
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Kişi silme</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                
+                                    <div class="modal-body">
+                                        <p>Kişiyi silmete emin misiniz ?</p>
+                                        <form method="POST">{% csrf_token %}
+                                            <button class="btn btn-danger">Sil</button>
+                                        </form>
+                                    </div>
+            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div> -->
+            </ul>
+        </div>
+        <div class="hostRate">
+            <label for="rateButton" class="form-label">Your rate</label><p id="rateValue"></p>
+            <input type="range" class="form-range" min="0" max="5" step="0.1" id="rateButton" value="{{host_rate}}">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block codes %}
+    {% include 'host_info/host_detailed_infos.js' %}
+{% endblock %}
+

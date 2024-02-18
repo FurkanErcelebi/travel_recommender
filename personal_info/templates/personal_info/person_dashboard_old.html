@@ -1,0 +1,43 @@
+{% extends "personal_info/person_template.html" %}
+
+{% block person_modules %}
+	<div class="personInfos">
+		<table class="mx-6 table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>No</th>
+					<th>Host Name</th>
+					<th>Star</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for last_reviewed_host in last_reviewed_host_list %}		
+					<!-- <td><a href="{{person.DisplayPersonInfo}}">{{num.increaseCounter}}</a></td> -->
+					<tr>
+						<td>{{index.increase_counter}}</td>
+						<td>{{last_reviewed_host.name}}</td>
+						<td>{{last_reviewed_host.star}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	
+		<div class="pagination paginationForHostRates">
+			{% if last_reviewed_host_list.has_previous %}
+			<li class="page_item" ><a class="page-link" href="?p={{last_reviewed_host_list.previous_page_number}}">Previous</a></li>
+			{% endif %}
+			
+			{% for page in last_reviewed_host_list.paginator.page_range %}
+				{% if last_reviewed_host_list.number == page %}
+					<li class="page_item"><a class="page-link" href="?p={{page}}"><strong>{{page}}</strong></a></li>
+				{% else %}
+					<li class="page_item"><a class="page-link" href="?p={{page}}">{{page}}</a></li>
+				{% endif %}
+			{% endfor %}
+
+			{% if last_reviewed_host_list.has_next %}
+			<li class="page_item"><a class="page-link" href="?p={{ last_reviewed_host_list.next_page_number }}">Next</a></li>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

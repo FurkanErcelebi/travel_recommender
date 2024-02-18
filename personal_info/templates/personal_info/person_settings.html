@@ -1,0 +1,84 @@
+{% extends "personal_info/person_template.html" %}
+
+{% block personal_style%}
+    {% include 'personal_info/personal_info_edit.css' %}
+{% endblock %}
+
+{% block person_modules %}
+	<div class="settingsPersonInfos">
+		<ul class="listProps list-group list-group-flush">
+			<li class="list-group-item">
+				<label id="email">Email</label>
+				<p>{{personal_infos.user_id.email}}</p>
+			</li>
+			<li class="list-group-item">
+				<label id="cell_phone_no">Cell Phone </label>
+				<p>{{personal_infos.cell_no}}</p>
+			</li>
+			<li class="list-group-item">
+				<label id="city">City </label>
+				<p>{{personal_infos.city}}</p>
+			</li>
+			<li class="list-group-item">
+				<label id="distinct">Distinct </label>
+				<p>{{personal_infos.distinct}}</p>
+			</li>
+			<li class="list-group-item">
+				<label id="neighbor">Neighbor </label>
+				<p>{{personal_infos.neighbor}}</p>
+			</li>
+			<li class="list-group-item">
+				<label id="other_addr_infos">Address</label>
+				<p>{{personal_infos.other_addr_infos}}</p>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<div class="modal fade" id="personalInfoEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl modal-dialog-centered">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Settings Change</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						{% include 'personal_info/personal_info_form.html' with form=settings_form  title=setting_title%}
+					</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-primary saveNewPersonalInfo">Save changes</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	</div>
+	<div class="modal fade" id="popup-warning" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="alertBox alert alert-success d-flex align-items-center" role="alert">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+				<div>
+					
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="personalInfoEditModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="alertBox alert alert-warning d-flex align-items-center" role="alert">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+				<div>
+				
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block personal_codes %}
+  {% include 'personal_info/person_settings.js'%}
+  {% include 'personal_info/personal_info_edit.js'%}
+{% endblock %}

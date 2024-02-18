@@ -1,0 +1,53 @@
+<div>
+<h2 class="personalInfoHead">{{ title }}</h2>
+
+{% if brief_description %}
+<div>
+    <p>{{ brief_description }}</p>
+</div>
+{% endif %}
+
+<table>
+    <form id="survey-form" class="form-survey"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <tbody>
+            {% for field in form %}
+                <tr>
+                    <td>
+                        <div class="personal_info">
+                            <label class="form-label" for="{{ field.id_for_label }}">
+                                {{ field.label }}
+                            </label>
+                            <div class="help-text">
+                                {{field.help_text}}
+                            </div>
+                        </div>
+                        {% for error in field.errors %}
+                            <p class="errorMsg">{{ error }}</p>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <div class="personal_field">
+                                {{ field }}
+                                <div id="{{ field.id_for_label }}_value"></div>
+                            <div class="infoErrorMsg">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>
+                    <div class="submitButton">
+                        <button id="save-survey" class="btn btn-info">
+                            Save
+                        </button>
+                    </div>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </tbody>
+    </form>
+</table>

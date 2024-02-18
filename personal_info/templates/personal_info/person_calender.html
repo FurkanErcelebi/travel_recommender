@@ -1,0 +1,20 @@
+{% extends "personal_info/person_template.html" %}
+
+{% block personal_style%}
+    {% include 'personal_info/person_calender.css' %}
+    {% include 'travel_search/plan_details.css' %}
+{% endblock %}
+
+{% block person_modules %}
+<div id='wrap'>
+    <div id='calendar'></div>
+    <div style='clear:both'></div>
+</div>
+{% include 'travel_search/plan_details.html' %}
+{% endblock %}
+
+{% block personal_codes %}
+    {% include 'travel_search/plan_details.js' %}
+    {% include 'personal_info/edit_calender.js' %}
+    {% include 'personal_info/person_calender.js' %}
+{% endblock %}

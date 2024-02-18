@@ -1,0 +1,98 @@
+
+
+td {
+    height: 100px;
+    width: 50%;
+}
+
+.personalSurveyHead{
+    color: green;
+    padding-left: 40%;
+    margin-bottom: 5%;
+}
+
+.errorMsg{
+    color: red;
+    width: 75%;
+}
+ 
+.survey-question , .survey-question-radio{
+    margin-bottom: 30%;
+}
+
+.survey-question-checkbox{
+    padding-bottom: 25%;
+    margin-bottom: 30%;
+}
+
+
+.survey-response-for-range {
+    margin-bottom: 15%;
+    /* float: left;
+    margin-left: 20%;
+    width: 50%; */
+}
+
+.survey-response-for-range-in-trip{
+    float: left;
+    margin-left: 20%;
+    margin-bottom: 15%;
+    width: 50%;
+}
+
+.survey-response-for-select{
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 15%;
+}
+
+.survey-response-for-checkbox{
+    margin-left: 20%;
+    margin-bottom: 15%;
+}
+
+.survey-response-for-radio {
+    margin-left: 20%;
+    margin-bottom: 25%;
+}
+
+.survey-response-for-number {
+    height: 20%;
+    margin-left: 20%;
+    margin-bottom: 25%;
+}
+
+input[type='number']{
+    width: 40%;
+    margin-bottom: 5%;
+} 
+
+.help-text {
+    color: #231c9e;
+    opacity: .6;
+}
+
+table {
+    border-collapse: separate;
+    border-color:brown;
+}
+
+
+.surveyErrorMsg ,.survey_radioErrorMsg, .survey_checkboxErrorMsg{
+    color: red;
+}
+
+
+.trip-survey{
+    width: 40%;
+}
+
+.surveyRangeValue {
+    float: left;
+    color: darkolivegreen;
+}
+/*label, input {
+    float:left;
+    margin:5px;
+}*/
+

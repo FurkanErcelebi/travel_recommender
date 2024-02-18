@@ -1,0 +1,166 @@
+<script type="text/javascript">
+
+    let registerButtom = document.getElementById('registerButtom');
+    registerButtom.disabled = true;
+    
+    function appear(elm, i, step, speed){
+        var t_o;
+        //initial opacity
+        i = i || 0;
+        //opacity increment
+        step = step || 5;
+        //time waited between two opacity increments in msec
+        speed = speed || 50; 
+
+        t_o = setInterval(function(){
+            //get opacity in decimals
+            var opacity = i / 100;
+            //set the next opacity step
+            i = i + step; 
+            if(opacity > 1 || opacity < 0){
+                clearInterval(t_o);
+                //if 1-opaque or 0-transparent, stop
+                return; 
+            }
+            //modern browsers
+            elm.style.opacity = opacity;
+            //older IE
+            elm.style.filter = 'alpha(opacity=' + opacity*100 + ')';
+        }, speed);
+
+    }
+
+    function addErrorMessage(msg, targetElmClass , idx, id, errorId) {
+      
+      let errorMsg = document.getElementById(errorId);
+      let elm = document.getElementById(id);
+      if(!errorMsg){
+        let parentElm = elm.parentNode;
+        let errorDiv = parentElm.getElementsByClassName(targetElmClass)[idx];
+        let newP = document.createElement('p');
+        newP.id = errorId;
+        newP.innerHTML = msg;
+        newP.style.opacity = 0;
+        errorDiv.append(newP);
+        appear(newP, 0, 5, 40);
+      }
+      elm.style.borderColor = 'red';
+
+    }
+
+    function removeErrorMessage(id, errorId){
+
+      let errorMsg = document.getElementById(errorId);
+      if(errorMsg){
+        appear(errorMsg, 40, 5, 0);
+        new Promise(resolve => setTimeout(resolve, 1000));
+        errorMsg.remove();
+      }
+      let elm = document.getElementById(id);
+      elm.style.borderColor = 'blue';
+
+    }
+
+    function controlUsername(username){
+
+      let size = username.length;
+      for(let i = 0; i < size ; i++){
+        
+        let value = username.charCodeAt(i);
+        let condition = 0;
+        if(value >= 48 && value <= 57){
+          condition++;
+        }
+        if(value >= 97 && value <= 122){
+          condition++;
+        }
+        if(value >= 65 && value <= 90){
+          condition++;   
+        }
+        if(value == 64 || value == 46 || value == 43 || value == 44 || value == 95){
+          condition++;
+        }
+
+        if(condition == 0){
+          return false;              
+        }
+      
+      }
+
+      return true;
+
+    }
+
+    document.getElementById("password1").addEventListener("input", () => {
+        let password1Elm = document.getElementById('password1');
+        let password1 = password1Elm.value;
+        let numOfErrors = 0;
+        if(password1.length < 8){
+          numOfErrors++;
+          addErrorMessage('Lenght must be greater than 8', 'registerErrorMsg', 0, 'password1', 'password1Error1');
+        }
+        else{
+          removeErrorMessage('password1' ,'password1Error1');
+        }
+        const myRe = /^(\d)*$/gm;
+        const array = myRe.exec(password1);
+        if(array){
+          numOfErrors++;
+          addErrorMessage('Not only contains numbers', 'registerErrorMsg', 0, 'password1', 'password1Error2');
+        }
+        else{
+          removeErrorMessage('password1' ,'password1Error2');
+        }
+        if(numOfErrors == 0){
+          password1Elm.append('<span style="color: green;" class="glyphicon glyphicon-ok"></span>');
+          registerButtom.disabled = false;
+        }
+        else{
+          registerButtom.disabled = true;
+        }
+
+    });
+    document.getElementById("username").addEventListener("input", () => {
+        let usernameElm = document.getElementById('username');
+        let username = usernameElm.value;
+        let numOfErrors = 0;
+        if(username.length < 5){
+          numOfErrors++;
+          addErrorMessage('lenght  must be greater than 5', 'registerErrorMsg', 0, 'username', 'usernameError1');
+        }
+        else{
+          removeErrorMessage('username' ,'usernameError1');
+        }
+        if(username.length > 150){
+          numOfErrors++;
+          addErrorMessage('lenght  must be les than 150', 'registerErrorMsg', 0, 'username', 'usernameError2');
+        }
+        else{
+          removeErrorMessage('username' ,'usernameError2');
+        }
+        /*const myRe = /(\w+)|(\w+\+\w+)|(\w+\[.]\w+)|(\w+\+\w+)|(\w+\-\w+)|(\w+\_\w+)/gm;
+        const array = myRe.exec(username);*/
+        if(!controlUsername(username)){
+          numOfErrors++;
+          addErrorMessage('letter , digits and @/./+/-/_ only', 'registerErrorMsg', 0, 'username', 'usernameError3');
+        }
+        else{
+          removeErrorMessage('username' ,'usernameError3');
+        }
+        if(username.length < 5){
+          numOfErrors++;
+        }
+        if(numOfErrors == 0){
+          let approveDiv = document.getElementsByClassName('approveDiv');
+          if(!approveDiv){
+            usernameElm.insertAdjacentHTML("afterbegin", `<div class="approveDiv">
+                                    <span style="color: green;" class="glyphicon glyphicon-ok"></span> 
+                                                        </div>`);
+          }
+          registerButtom.disabled = false;
+        }
+        else{
+          registerButtom.disabled = true;
+        }
+    });
+  </script>

@@ -1,0 +1,18 @@
+{% for host_and_trip_places in hosts_and_trip_places%}
+            <a href="{{host_and_trip_places.host_url}}" aria-live="assertive">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static "img/Restaurant.png" %}" alt="something" />
+    
+                        <div class="card-body">
+                            <p class="hostInfo card-text">{{host_and_trip_places.host_infos.name}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}

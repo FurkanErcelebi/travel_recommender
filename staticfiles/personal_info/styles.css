@@ -1,0 +1,34 @@
+.personalInfoDetailBlock{  
+    padding: 3%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 60%;
+  }
+  
+  .sideMenu {
+      width: 20%;
+  }
+  .sideMenu a{
+      display: block;
+  }
+  
+  .sideMenu a.active{
+      background-color: #04AA6D;
+  }
+  
+  .divideLine {
+    width: 5%;
+    color : black;
+    border-left: 3px solid;
+    opacity: 0.2;
+    height: 20px;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 80%;
+  }
+  
+  .basePersonInfos lable{
+       width: 75%;
+  }

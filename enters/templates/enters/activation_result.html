@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block styles%}
+  {% include 'enters/styles.css' %}
+{% endblock %}
+
+
+{% block intermediate %}
+ <!-- top-50 start-50 translate-middle position-absolute -->
+<div class="justify-content-center messagePosition">
+  {% if isActivated %}
+	<p class="h3">Successfully sign up and activated</p>
+  {% else %}
+  <p class="h3">Sign up failed, please control adminstration for this operation</p>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+
+.headerHost {
+    margin-bottom: 10%;
+}
+
+.title {
+    float: left;
+    width: 60%;
+    padding-bottom: 5%;
+}
+
+.searchHost{
+    float: right;
+    width: 40%;
+    margin-right: 30%;
+    margin-top: 3%;
+}
+
+#hostSearchInput {
+    width: 80%;
+    float: right;
+}
+
+form {
+    vertical-align: middle;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}

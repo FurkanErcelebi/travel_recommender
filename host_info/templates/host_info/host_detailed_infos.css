@@ -1,0 +1,21 @@
+.hostInfoDetailBlock{ 
+    width: 70%;
+}
+
+.hostTitle {
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.hostDetailedInfos {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+.hostRate {
+    padding-left: 60%;
+    padding-right: 10%;
+    padding-top: 5%;
+    float: right;
+}
