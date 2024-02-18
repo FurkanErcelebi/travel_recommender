@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+
+{% block styles%}
+    {% include 'personal_info/person_template.css' %}
+    {% include 'side_menu.css' %}
+    {% block personal_style%}
+    {% endblock %}
+{% endblock %}
+
+
+{% block intermediate%}
+<!-- {% load static %}  <img src="{% static './user-profile-default-image.png' %}" /> -->
+    {% include 'side_menu.html'%}
+    <main id="swup" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 transition-fade">
+        <div class="mt-5 pb-3 text-bg-light text-center">
+            <h2>Personal Infos</h2>
+        </div>
+        <div class="w-50 m-16">
+            <div class="d-inline personalInfoDetailBlock justify-content-center border border-3 position-absolute shadow">
+                <div>
+                    <!-- sideMenu flex--item fl-shrink0 mr32 wmn1 md:d-none js-settings-nav -->
+                    <!-- make this flex like sidebar-->
+                    <div class="sideMenu">
+                        <ul class="sideMenuElements list-group">
+                            <!-- class="s-navigation--item is-selected pr48 ps-relative" -->
+                            <li class="list-group-item"">
+                                <a href="{% url 'person:personDashboard' %}" title="See recent reviews" data-shortcut="S">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="list-group-item"">
+                                <a href="{% url 'person:personSettings' %}" title="See or edit your settings" data-shortcut="A">
+                                    Settings
+                                </a>
+                            </li>
+                            <li class="list-group-item"">
+                                <a href="{% url 'person:personSurveyInfos' %}" title="See or edit your survey answers" data-shortcut="Q">
+                                    Surveys
+                                </a>
+                            </li>
+                            <li class="list-group-item"">
+                                <a href="{% url 'person:personCalender' %}" title="Add or delete travel plans in calender" data-shortcut="T">
+                                    Calenders
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="editButtonDiv">
+                            <!-- data-bs-toggle="modal" data-bs-target="#personalInfoEditModal" -->
+                            <button id="editButton" type="button" class="btn btn-outline-secondary">
+                                <svg aria-hidden="true" class="svg-icon iconPencil" width="18" height="18" viewBox="0 0 18 18"><path d="m13.68 2.15 2.17 2.17c.2.2.2.51 0 .71L14.5 6.39l-2.88-2.88 1.35-1.36c.2-.2.51-.2.71 0ZM2 13.13l8.5-8.5 2.88 2.88-8.5 8.5H2v-2.88Z"></path></svg>
+                                Edit Infos
+                            </button>
+                        </div>
+                    </div>
+                    <div class="personalInfos">
+                        <section>
+                            {% block person_modules %}
+                            {% endblock %}
+                        </section>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+{% endblock %}
+
+{% block codes %}
+    {% include 'personal_info/person_template.js'%}
+    {% block personal_codes %}
+    {% endblock %}
+{% endblock %}

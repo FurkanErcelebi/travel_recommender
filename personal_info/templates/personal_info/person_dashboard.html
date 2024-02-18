@@ -1,0 +1,55 @@
+{% extends "personal_info/person_template.html" %}
+
+{% block person_modules %}
+	<div class="personInfos">
+		<div class="recentVisitContainer">
+			<div id="recentVisitedHosts">
+				<div class="text-bg-info text-md-center">
+					<h3>Recent Host Rates</h3>
+				</div>
+				<table class="mx-6 table table-bordered table-striped-columns">
+					<thead class="thead-dark">
+						<tr>
+							<th>No</th>
+							<th>Host Name</th>
+							<th>Star</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+	
+				<div class="pagination">
+					<li class="page-item previous" ><a class="page-link">Previous</a></li>
+					<li class="page-item next"><a class="page-link" >Next</a></li>
+				</div>
+			</div>
+			<div class=" mt-5" id="recentVisitedTripPlans">
+				<div class="text-bg-success text-md-center">
+					<h3>Recent Plan Rates</h3>
+				</div>
+				<table class="mx-6 table table-bordered table-striped-columns">
+					<thead class="thead-dark">
+						<tr>
+							<th>No</th>
+							<th>Plan No / name</th>
+							<th>star</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+	
+				<div class="pagination">
+					<li class="page_item previous"><a class="page-link">Previous</a></li>
+					<li class="page_item next"><a class="page-link" >Next</a></li>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block personal_codes %}
+    {% include 'personal_info/person_dashboard.js' %}
+{% endblock %}

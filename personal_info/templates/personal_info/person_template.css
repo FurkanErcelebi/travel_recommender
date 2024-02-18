@@ -1,0 +1,56 @@
+.personalInfoDetailBlock{  
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    /* margin-left: 10%; */
+    margin-right: 10%;
+    width: 70%;
+  }
+
+.personalInfos {
+    float: left;
+    width: 70%;
+}
+
+.sideMenu {
+    float: left;
+    width: 25%;
+    margin-right: 5%;
+}
+
+.sideMenu a{
+    display: block;
+}
+  
+.sideMenu a.active{
+    background-color: #04AA6D;
+}
+
+.divideLine {
+    width: 5%;
+    color : black;
+    border-left: 3px solid;
+    opacity: 0.2;
+    height: 20px;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 80%;
+}
+
+.basePersonInfos lable{
+    width: 75%;
+}
+
+.personInfo {
+    height: 40%;
+}
+
+.editButtonDiv {
+    padding-top: 30%;
+    float: left;
+}
+
+.alertBox {
+    width: 80%;
+    float: right;
+}

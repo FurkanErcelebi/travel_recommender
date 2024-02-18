@@ -1,0 +1,14 @@
+.recommendedPlanElement{  
+    width: 25%;
+    height:25%;
+  }
+  
+  .recommendedPlanBlock{  
+    padding: 3%;
+    width: 15%;
+  }
+
+  .rcmDesc {
+    padding-left: 15%;
+  }
+  

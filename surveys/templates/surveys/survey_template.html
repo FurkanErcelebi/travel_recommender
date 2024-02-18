@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block styles%}
+    {% include 'surveys/survey_template.css' %}
+    {% include 'surveys/survey_body.css' %}
+{% endblock %}
+
+
+{% block intermediate %}
+
+    <div class="w-50 m-16">
+        <div class="d-inline surveyBlock justify-content-center border border-3 position-absolute shadow">
+            <div>
+                {% include "surveys/survey_body.html" with survey_title=survey_title brief_description=brief_description survey_form=survey_form%}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block codes %}
+    {% include 'surveys/survey_body.js' %}
+{% endblock %}

@@ -1,0 +1,86 @@
+<h2 class="personalSurveyHead">{{ title }}</h2>
+
+{% if brief_description %}
+<div>
+    <p>{{ brief_description }}</p>
+</div>
+
+<table class="trip-survey">
+{% else %}
+
+<table>
+{% endif %}
+
+    <form id="survey-form" class="form-survey"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <tbody>
+            {% for field in form %}
+                <tr>
+                    {% if field.field.widget.input_type == 'radio' or field.field.widget.input_type == 'checkbox' %}
+                        <td>
+                            <div class="survey-question-{{ field.field.widget.input_type }}">
+                                <label id="{{field.name}}" class="form-label">
+                                    {{ field.label }}
+                                </label>
+                                <div class="help-text">
+                                    {{field.help_text}}
+                                </div>
+                            </div>
+                            {% for error in field.errors %}
+                                <p class="errorMsg">{{ error }}</p>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <div class="survey-response-for-{{ field.field.widget.input_type }}">
+                                {% for element in field %}
+                                    <div class="form-check">
+                                        {{ element.tag }}
+                                        <label class="form-check-label" for="{{ element.id_for_label }}">
+                                            {{ element.choice_label }}
+                                        </label>
+                                    </div>
+                                {% endfor %}
+                                <div class="survey_{{ field.field.widget.input_type }}ErrorMsg">
+                                </div>
+                            </div>
+                        </td>
+                    {% else %}
+                        <td>
+                            <div class="survey-question">
+                                <label class="form-label" for="{{ field.id_for_label }}">
+                                    {{ field.label }}
+                                </label>
+                                <div class="help-text">
+                                    {{field.help_text}}
+                                </div>
+                            </div>
+                            {% for error in field.errors %}
+                                <p class="errorMsg">{{ error }}</p>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <div class="survey-response-for-{{ field.field.widget.input_type }}">
+                                    {{ field }}
+                                    <div id="{{ field.id_for_label }}_value"></div>
+                                <div class="surveyErrorMsg">
+                                </div>
+                            </div>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>
+                    <div class="submitButton">
+                        <button id="save-survey" class="btn btn-info">
+                            Save
+                        </button>
+                    </div>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </tbody>
+    </form>
+</table>

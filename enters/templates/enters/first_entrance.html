@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block styles%}
+	{% include 'enters/styles.css' %}
+{% endblock %}
+
+
+{% block intermediate %}
+
+<div class="messagePosition">
+	<p> You login app first time , so we sill ask some question about travel preferences about you</p>
+	<br/>
+	<p> please click link below to start survey </p>
+	<br/>
+	<a href="{% url 'surveys:newPersonalSurvey' %}">start<a> 
+</div>
+
+{% endblock %}

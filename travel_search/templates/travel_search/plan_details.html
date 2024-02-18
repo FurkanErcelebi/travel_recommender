@@ -1,0 +1,104 @@
+
+<!-- This is default template , remove when submit -->
+
+<div class="modal fade" id="planDetailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Plan Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="hostBlock m-6" id="host_infos">
+                        <div class="hostBriefInfo m-lg-2">
+                            <h6>Host name</h6>
+                            <p></p>
+                        </div>
+                        <div class="hostBriefInfo m-lg-2">
+                            <h6>Host rate</h6>
+                            <p></p>
+                        </div>
+                        <div class="hostBriefInfo m-lg-2">
+                            <h6>Price</h6>
+                            <p></p>
+                        </div>
+                        <div class="hostBriefInfo m-lg-2">
+                            <h6>Place type</h6>
+                            <p></p>
+                        </div>
+                        <div class="viewHost m-lg-2">
+                            <a href="">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="dates">
+                    <div>
+                        <div>
+                            <h6>Start Date</h6>
+                        </div>
+                        <!-- remove when submit -->
+                        <div class="input-group date " id="startDatePicker">
+                            <input type="text" class="form-control">
+                            <span class="input-group-append">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <!-- remove when submit -->
+                    </div>
+                    <div>
+                        <div>
+                            <h6>End Date</h6>
+                        </div>
+                        <!-- remove when submit -->
+                        <div class="input-group date" id="endDatePicker">
+                            <input type="text" class="form-control">
+                            <span class="input-group-append">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <!-- remove when submit -->
+                    </div>
+                </div>
+                <div class="row">
+                    <h5>Place Types</h5>
+                    <ul style="list-style: none;" id="place_types">
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="tripBriefInfoList">
+                    <h5>Trip Locations</h5>
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="" id="operateTripPlan"></button>
+                <div class="planRate" hidden>
+                    <label for="rateButton" class="form-label">Your rate</label><p id="rateValue"></p>
+                    <input type="range" class="form-range" min="0" max="5" step="0.1" id="rateButton">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popup-warning" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="alertBox alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+                
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,73 @@
+.surveyBlock{  
+    padding: 3%;
+    padding-bottom: 10%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    width: 75%;
+  }
+  
+
+td {
+    height: 100px;
+    width: 50%;
+}
+
+.personalInfoHead{
+    color: green;
+    padding-left: 40%;
+    margin-bottom: 5%;
+}
+
+.errorMsg{
+    color: red;
+    width: 75%;
+}
+ 
+.personal_info {
+    margin-bottom: 30%;
+}
+
+
+
+.personal_field {
+    margin-bottom: 15%;
+}
+
+
+input[type='text']{
+    width: 40%;
+    margin-bottom: 5%;
+} 
+
+.help-text {
+    color: #231c9e;
+    opacity: .6;
+}
+
+table {
+    border-collapse: separate;
+    border-color:brown;
+}
+
+
+.infoErrorMsg {
+    color: red;
+}
+
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
